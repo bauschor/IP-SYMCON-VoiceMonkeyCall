@@ -1,0 +1,15 @@
+{
+    "id": "{6E44203E-CC50-6E8B-2B90-B81611FA1A6B}",
+    "name": "VoiceMonkeyCall",
+    "url": "https://ollf.de/",
+    "type": 3,
+    "vendor": "VoiceMonkey",
+    "aliases":
+    [
+        "Echo TTS by VoiceMonkey"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "VMC"
+}
