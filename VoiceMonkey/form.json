@@ -7,7 +7,7 @@
     ],
     "actions":
     [
-        { "type": "ValidationTextBox", "name": "VMC_monkey_device", "caption": "Monkey Device" }
+        { "type": "ValidationTextBox", "name": "VMC_monkey_device", "caption": "Monkey Device" },
         { "type": "Button", "label": "Test", "onClick": "VMC_TTS($id, $VMC_monkey_device, 'test');" }
     ]
 }
