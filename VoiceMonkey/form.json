@@ -9,6 +9,6 @@
     ],
     "actions":
     [
-        { "type": "Button", "label": "Test", "onClick": "VMC_TTS($id, 'echo-show-esszimmer', 'test');" }
+        { "type": "Button", "label": "Test", "onClick": "VMC_TTS($id, $VMC_monkey_device, 'test');" }
     ]
 }
