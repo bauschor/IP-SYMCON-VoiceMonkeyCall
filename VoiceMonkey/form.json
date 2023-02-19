@@ -3,12 +3,11 @@
     [
         { "type": "ValidationTextBox", "name": "VMC_url", "caption": "URL" },
         { "type": "ValidationTextBox", "name": "VMC_access_token", "caption": "Access Token" },
-        { "type": "ValidationTextBox", "name": "VMC_secret_token", "caption": "Secret Token" },
-        { "type": "ValidationTextBox", "name": "VMC_monkey_device", "caption": "Monkey Device" }
-
+        { "type": "ValidationTextBox", "name": "VMC_secret_token", "caption": "Secret Token" }
     ],
     "actions":
     [
+        { "type": "ValidationTextBox", "name": "VMC_monkey_device", "caption": "Monkey Device" }
         { "type": "Button", "label": "Test", "onClick": "VMC_TTS($id, $VMC_monkey_device, 'test');" }
     ]
 }
