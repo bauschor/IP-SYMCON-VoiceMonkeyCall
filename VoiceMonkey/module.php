@@ -36,7 +36,7 @@
             $acc = $this->ReadPropertyString("VMC_access_token");
             $sec = $this->ReadPropertyString("VMC_secret_token");
             $dev = $monkey_device;
-            $txt = htmlspecialchars($text);
+            $txt = urlencode($text);
 
             Sys_GetURLContent($url."?access_token=".$acc."&secret_token=".$sec."&monkey=".$dev."&announcement=".$txt);
       }
