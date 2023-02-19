@@ -14,3 +14,5 @@ https://app.voicemonkey.io/dashboard
 Die Sprachausgabe erfolgt dann im PHP Code durch
 
 VMC_TTS([ID der VoiceMonkeyCall Instanz], [Name_des_Echo_Devices_in_VoiceMonkey], $text);
+
+Den Namen des Echo Devices in VoiceMonkey findet man z.B. im Beispielcode für das jeweilige Device (Fenster auf der rechten Seite) unter https://app.voicemonkey.io/api-v1/playground
