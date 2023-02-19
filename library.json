@@ -2,7 +2,7 @@
 	"id": "{BBF8D7B4-99F8-AAB1-EC29-9D35B9B75A74}",
 	"author": "Oliver Bausch",
 	"name": "VoiceMonkeyCall",
-	"url": "http://ollf.de",
+	"url": "https://github.com/bauschor/IP-SYMCON-VoiceMonkeyCall",
 	"compatibility": {
 		"version": "5.5"
 	},
