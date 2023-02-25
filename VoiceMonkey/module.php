@@ -28,8 +28,9 @@
         * Die folgenden Funktionen stehen automatisch zur Verfügung, wenn das Modul über die "Module Control" eingefügt wurden.
         * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wiefolgt zur Verfügung gestellt:
         *
-        * VMC_TTS($monkey_device, $text [, $voice])
-		* VMC_Trigger($monkey_device [, $text, $voice, $image, $video, $website])
+        * VMC_TTS($monkey_device, $text)
+        * VMC_TTS_voice($monkey_device, $text, $voice)
+	* VMC_Trigger($monkey_device, $text, $voice, $image, $video, $website)
         */
 
         // -------------------------------------------------------------------------        
@@ -53,9 +54,30 @@
 			$this->SetValue("VMC_last_TTS", $text);
 		}
 
+	    
+        // -------------------------------------------------------------------------        
+        public function TTS_voice(string $monkey_device, string $text, string $voice) {
+
+            $url = $this->ReadPropertyString("VMC_url");
+            $acc = $this->ReadPropertyString("VMC_access_token");
+            $sec = $this->ReadPropertyString("VMC_secret_token");
+            $dev = $monkey_device;
+            $txt = urlencode($text);
+
+		$vce = "";
+		if (strlen($voice) > 0){
+			$vce = "&voice=".urlencode($voice);
+		}
+		
+            Sys_GetURLContent($url."?access_token=".$acc."&secret_token=".$sec."&monkey=".$dev."&announcement=".$txt.$vce);
+			$this->SetValue("VMC_last_device", $monkey_device);
+			$this->SetValue("VMC_last_TTS", $text);
+		}
+
+
 
 		// -------------------------------------------------------------------------        
-        public function Trigger(string $monkey_device, string $text = null, string $voice = null, string $image = null, string $video = null, string $website = null) {
+        public function Trigger(string $monkey_device, string $text, string $voice, string $image, string $video, string $website) {
 
             $url = $this->ReadPropertyString("VMC_url");
             $acc = $this->ReadPropertyString("VMC_access_token");
@@ -64,20 +86,20 @@
 
 
 			$more = "";
-			if ($text !== null){
+			if (strlen($text) > 0){
 				$more = $more."&announcement=".urlencode($text);
 				$this->SetValue("VMC_last_TTS", $text);
 			}
-			if ($voice !== null){
+			if (strlen($voice) > 0){
 				$more = $more."&voice=".urlencode($voice);
 			}
-			if ($image !== null){
+			if (strlen($image) > 0){
 				$more = $more."&image=".urlencode($image);
 			}
-			if ($video !== null){
+			if (strlen($video) > 0){
 				$more = $more."&video=".urlencode($video);
 			}				
-			if ($website !== null){
+			if (strlen($website) > 0){
 				$more = $more."&website=".urlencode($website);
 			}
 
