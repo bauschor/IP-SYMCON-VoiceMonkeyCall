@@ -14,19 +14,8 @@
 			
             $this->RegisterVariableString("VMC_last_device", "Last Device");			
             $this->RegisterVariableString("VMC_last_TTS", "Last TTS");			
-		}
+	}
 		
-/*		
-        public function RequestAction($Ident, $Value) {
-            switch($Ident){
-            case "VMC_last_device":
-                break;                
-            case "VMC_last_TTS":
-                break;
-            }
-        }
-*/
-
 
         // Überschreibt die intere IPS_ApplyChanges($id) Funktion
         public function ApplyChanges() {
@@ -55,7 +44,7 @@
 			
 			$this->SetValue("VMC_last_device", $monkey_device);
 			$this->SetValue("VMC_last_TTS", $text);
-      }
+      	}
 
     }
 ?>
