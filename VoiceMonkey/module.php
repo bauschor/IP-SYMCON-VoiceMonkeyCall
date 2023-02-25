@@ -34,7 +34,7 @@
         */
 
         // -------------------------------------------------------------------------        
-        public function TTS(string $monkey_device, string $text, string $voice = null) {
+        public function TTS(string $monkey_device, string $text) {
 
             $url = $this->ReadPropertyString("VMC_url");
             $acc = $this->ReadPropertyString("VMC_access_token");
@@ -42,13 +42,7 @@
             $dev = $monkey_device;
             $txt = urlencode($text);
 
-			$vce = "";
-			
-			if ($voice !== null){
-				$vce = "&voice=".urlencode($voice);
-			}
-			
-            Sys_GetURLContent($url."?access_token=".$acc."&secret_token=".$sec."&monkey=".$dev."&announcement=".$txt.$vce);
+            Sys_GetURLContent($url."?access_token=".$acc."&secret_token=".$sec."&monkey=".$dev."&announcement=".$txt);
 			
 			$this->SetValue("VMC_last_device", $monkey_device);
 			$this->SetValue("VMC_last_TTS", $text);
