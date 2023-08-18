@@ -7,10 +7,9 @@
             // Diese Zeile nicht löschen.
             parent::Create();
 
-            $this->RegisterPropertyString("VMC_url", "https://api.voicemonkey.io/trigger");
-            $this->RegisterPropertyString("VMC_access_token", "Access Token");
-            $this->RegisterPropertyString("VMC_secret_token", "Secret Token");
-            $this->RegisterPropertyString("VMC_monkey_device", "Device");
+            $this->RegisterPropertyString("VMC_url", "https://api-v2.voicemonkey.io/announcement");
+            $this->RegisterPropertyString("VMC_token", "Token");
+            $this->RegisterPropertyString("VMC_device", "Device");
 			
             $this->RegisterVariableString("VMC_last_device", "Last Device");			
             $this->RegisterVariableString("VMC_last_TTS", "Last TTS");			
@@ -35,12 +34,11 @@
         public function TTS(string $monkey_device, string $text) {
 
             $url = $this->ReadPropertyString("VMC_url");
-            $acc = $this->ReadPropertyString("VMC_access_token");
-            $sec = $this->ReadPropertyString("VMC_secret_token");
+            $tok = $this->ReadPropertyString("VMC_token");
             $dev = $monkey_device;
             $txt = urlencode($text);
 
-            Sys_GetURLContent($url."?access_token=".$acc."&secret_token=".$sec."&monkey=".$dev."&announcement=".$txt);
+            Sys_GetURLContent($url."?token=".$tok."&device=".$dev."&text=".$txt);
 			
 			$this->SetValue("VMC_last_device", $monkey_device);
 			$this->SetValue("VMC_last_TTS", $text);
