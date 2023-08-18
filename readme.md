@@ -17,3 +17,5 @@ VMC_TTS([ID der VoiceMonkeyCall Instanz], [Name_des_Echo_Devices_in_VoiceMonkey]
 
 Den Namen des Echo Devices in VoiceMonkey findet man z.B. im Beispielcode für das jeweilige Device (Fenster auf der rechten Seite, "API URL") unter https://console.voicemonkey.io/api-v2/playground
 (In der URL, hinter dem Schlüsselwort "&device=" bis zum nachfolgenden "&")
+
+Leider habe ich keine Möglichkeit gefunden, die Namen der in VoiceMonkey angelegten Devices auszulesen, d.h. man muss wirklich den Device-Namen aus der o.g. URL holen; sorry.
