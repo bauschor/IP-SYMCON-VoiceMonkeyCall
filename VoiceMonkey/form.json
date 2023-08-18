@@ -1,9 +1,8 @@
 {
     "elements":
     [
-        { "type": "ValidationTextBox", "name": "VMC_url", "caption": "URL" },
-        { "type": "ValidationTextBox", "name": "VMC_access_token", "caption": "Access Token" },
-        { "type": "ValidationTextBox", "name": "VMC_secret_token", "caption": "Secret Token" }
+        { "type": "ValidationTextBox", "name": "VMC_url", "caption": "URL (v2)" },
+        { "type": "ValidationTextBox", "name": "VMC_token", "caption": "Token" }
     ],
     "actions":
     [
